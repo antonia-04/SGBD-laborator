@@ -1,5 +1,7 @@
 ## **BookStore Application**
 
+You can see how it looks here: ![ImageFirstStage.png](ImageFirstStage.png)
+
 ### **Database Requirement**
 
 To use this application, you need the following database structure:
