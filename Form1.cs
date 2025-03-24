@@ -37,7 +37,7 @@ namespace SGBD___laborator_1
                     childAdapter.SelectCommand = new SqlCommand("SELECT * FROM Book;", con);
 
                     parentAdapter.Fill(ds, "Author");
-                    MessageBox.Show($"S-au încărcat {ds.Tables["Author"].Rows.Count} autori");
+                    MessageBox.Show($"S-au incarcat {ds.Tables["Author"].Rows.Count} autori");
 
                     childAdapter.Fill(ds, "Book");
 
@@ -54,7 +54,7 @@ namespace SGBD___laborator_1
                     bsChild.DataMember = "FK_Author_Book";
                     dataGridViewChild.DataSource = bsChild;
 
-                    // Afișăm numele autorului selectat în textBox
+                    // numele autorului selectat in textBox
                     textBox1.DataBindings.Add("Text", bsParent, "name", true);
                 }
             }
@@ -63,16 +63,18 @@ namespace SGBD___laborator_1
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Metoda care incarca datele in DataSet / Reload data in DataSet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    /* daca lucram doar cu SqlDataAdapters, putem omite deschiderea conexiunii, deoarece acest tip
-                     * de obiect deschide si inchide apoi automat conexiunea
-                     */
+
                     parentAdapter.SelectCommand.Connection = con;
                     childAdapter.SelectCommand.Connection = con;
                     if (ds.Tables.Contains("Book"))
@@ -93,7 +95,11 @@ namespace SGBD___laborator_1
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Metoda care incarca datele in textBox-uri
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bsChild_CurrentChanged(object sender, EventArgs e)
         {
             if (bsChild.Current != null)
@@ -123,7 +129,7 @@ namespace SGBD___laborator_1
         {
             if (bsParent.Current == null)
             {
-                MessageBox.Show("Selectați un autor înainte de a adăuga o carte.");
+                MessageBox.Show("Selectați un autor înainte de a adăuga o carte!!");
                 return;
             }
 
@@ -149,8 +155,8 @@ namespace SGBD___laborator_1
 
                     SqlCommand cmdMax = new SqlCommand("SELECT MAX(isbn) FROM Book", con);
                     object result = cmdMax.ExecuteScalar();
-                    int newISBN = (result != DBNull.Value) ? Convert.ToInt32(result) + 1 : 1; // Dacă nu există, începe de la 1
-
+                    int newISBN = (result != DBNull.Value) ? Convert.ToInt32(result) + 1 : 1; // daca nu exista, incepe de la 1
+                    /// inseram in baza de date cartea
                     SqlCommand cmd = new SqlCommand("INSERT INTO Book (isbn, title, price, year, idAuthor, idPublisher, idProvider) VALUES (@isbn, @title, @price, @year, @idAuthor, @idPublisher, @idProvider)", con);
 
                     cmd.Parameters.AddWithValue("@isbn", newISBN);
@@ -210,7 +216,7 @@ namespace SGBD___laborator_1
                 }
 
                 MessageBox.Show("Cartea a fost actualizată!");
-                button1_Click_1(null, null); // Reîncarcă datele
+                button1_Click_1(null, null); // reincarca datele la fiecare update
             }
             catch (Exception ex)
             {
@@ -246,15 +252,13 @@ namespace SGBD___laborator_1
                 }
 
                 MessageBox.Show("Cartea a fost ștearsă!");
-                button1_Click_1(null, null); // Reîncarcă datele
+                button1_Click_1(null, null); // reincarca datele la fiecare stergere
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-
 
 
     }

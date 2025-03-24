@@ -30,6 +30,7 @@ namespace SGBD___laborator_1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelParent = new System.Windows.Forms.Label();
             this.labelChild = new System.Windows.Forms.Label();
             this.dataGridViewParent = new System.Windows.Forms.DataGridView();
@@ -50,16 +51,10 @@ namespace SGBD___laborator_1
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.textBoxIdPublisher = new System.Windows.Forms.TextBox();
             this.textBoxIdProvider = new System.Windows.Forms.TextBox();
-            this.bsChild = new System.Windows.Forms.BindingSource();
+            this.bsChild = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChild)).BeginInit();
-
-            this.labelTitle.Text = "Title";
-            this.labelPrice.Text = "Price";
-            this.labelYear.Text = "Year";
-            this.labelIdPublisher.Text = "Publisher ID";
-            this.labelIdProvider.Text = "Provider ID";
-
+            ((System.ComponentModel.ISupportInitialize)(this.bsChild)).BeginInit();
             this.SuspendLayout();
             // 
             // labelParent
@@ -107,7 +102,7 @@ namespace SGBD___laborator_1
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.ForeColor = System.Drawing.Color.Indigo;
             this.button1.Location = new System.Drawing.Point(407, 434);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
@@ -139,6 +134,7 @@ namespace SGBD___laborator_1
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonAdd.ForeColor = System.Drawing.Color.Indigo;
             this.buttonAdd.Location = new System.Drawing.Point(32, 504);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(120, 40);
@@ -150,6 +146,7 @@ namespace SGBD___laborator_1
             // buttonUpdate
             // 
             this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Indigo;
             this.buttonUpdate.Location = new System.Drawing.Point(32, 550);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(120, 40);
@@ -161,6 +158,7 @@ namespace SGBD___laborator_1
             // buttonDelete
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonDelete.ForeColor = System.Drawing.Color.Indigo;
             this.buttonDelete.Location = new System.Drawing.Point(32, 596);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(120, 40);
@@ -172,16 +170,18 @@ namespace SGBD___laborator_1
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(620, 480);
+            this.labelTitle.ForeColor = System.Drawing.Color.Indigo;
+            this.labelTitle.Location = new System.Drawing.Point(637, 480);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(35, 20);
+            this.labelTitle.Size = new System.Drawing.Size(38, 20);
             this.labelTitle.TabIndex = 7;
             this.labelTitle.Text = "Title";
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(620, 520);
+            this.labelPrice.ForeColor = System.Drawing.Color.Indigo;
+            this.labelPrice.Location = new System.Drawing.Point(637, 520);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(44, 20);
             this.labelPrice.TabIndex = 8;
@@ -190,71 +190,77 @@ namespace SGBD___laborator_1
             // labelYear
             // 
             this.labelYear.AutoSize = true;
-            this.labelYear.Location = new System.Drawing.Point(620, 560);
+            this.labelYear.ForeColor = System.Drawing.Color.Indigo;
+            this.labelYear.Location = new System.Drawing.Point(637, 560);
             this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(38, 20);
+            this.labelYear.Size = new System.Drawing.Size(43, 20);
             this.labelYear.TabIndex = 9;
             this.labelYear.Text = "Year";
             // 
             // labelIdPublisher
             // 
             this.labelIdPublisher.AutoSize = true;
-            this.labelIdPublisher.Location = new System.Drawing.Point(620, 600);
+            this.labelIdPublisher.ForeColor = System.Drawing.Color.Indigo;
+            this.labelIdPublisher.Location = new System.Drawing.Point(637, 600);
             this.labelIdPublisher.Name = "labelIdPublisher";
-            this.labelIdPublisher.Size = new System.Drawing.Size(81, 20);
+            this.labelIdPublisher.Size = new System.Drawing.Size(95, 20);
             this.labelIdPublisher.TabIndex = 10;
             this.labelIdPublisher.Text = "Publisher ID";
             // 
             // labelIdProvider
             // 
             this.labelIdProvider.AutoSize = true;
-            this.labelIdProvider.Location = new System.Drawing.Point(620, 640);
+            this.labelIdProvider.ForeColor = System.Drawing.Color.Indigo;
+            this.labelIdProvider.Location = new System.Drawing.Point(637, 640);
             this.labelIdProvider.Name = "labelIdProvider";
-            this.labelIdProvider.Size = new System.Drawing.Size(73, 20);
+            this.labelIdProvider.Size = new System.Drawing.Size(87, 20);
             this.labelIdProvider.TabIndex = 11;
             this.labelIdProvider.Text = "Provider ID";
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.Location = new System.Drawing.Point(720, 480);
+            this.textBoxTitle.Location = new System.Drawing.Point(737, 480);
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(150, 26);
             this.textBoxTitle.TabIndex = 12;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(720, 520);
+            this.textBoxPrice.Location = new System.Drawing.Point(737, 520);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(150, 26);
             this.textBoxPrice.TabIndex = 13;
             // 
             // textBoxYear
             // 
-            this.textBoxYear.Location = new System.Drawing.Point(720, 560);
+            this.textBoxYear.Location = new System.Drawing.Point(737, 560);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(150, 26);
             this.textBoxYear.TabIndex = 14;
             // 
             // textBoxIdPublisher
             // 
-            this.textBoxIdPublisher.Location = new System.Drawing.Point(720, 600);
+            this.textBoxIdPublisher.Location = new System.Drawing.Point(737, 600);
             this.textBoxIdPublisher.Name = "textBoxIdPublisher";
             this.textBoxIdPublisher.Size = new System.Drawing.Size(150, 26);
             this.textBoxIdPublisher.TabIndex = 15;
             // 
             // textBoxIdProvider
             // 
-            this.textBoxIdProvider.Location = new System.Drawing.Point(720, 640);
+            this.textBoxIdProvider.Location = new System.Drawing.Point(737, 640);
             this.textBoxIdProvider.Name = "textBoxIdProvider";
             this.textBoxIdProvider.Size = new System.Drawing.Size(150, 26);
             this.textBoxIdProvider.TabIndex = 16;
-
+            // 
+            // bsChild
+            // 
+            this.bsChild.CurrentChanged += new System.EventHandler(this.bsChild_CurrentChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Thistle;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1393, 685);
             this.Controls.Add(this.textBoxIdProvider);
             this.Controls.Add(this.textBoxIdPublisher);
@@ -280,9 +286,9 @@ namespace SGBD___laborator_1
             this.Name = "Form1";
             this.Text = "BookStore";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.bsChild.CurrentChanged += new System.EventHandler(this.bsChild_CurrentChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChild)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsChild)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
