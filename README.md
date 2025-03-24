@@ -1,6 +1,8 @@
 ## **BookStore Application**
 
-You can see how it looks here: ![ImageFirstStage.png](ImageFirstStage.png)
+You can see how it looks here: 
+
+![ImageFirstStage.png](ImageFirstStage.png)
 
 ### **Database Requirement**
 
